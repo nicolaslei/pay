@@ -1,0 +1,26 @@
+{
+    "name": "roc/pay",
+    "type": "library",
+    "description": "aggregate payment",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MingLei Wei",
+            "email": "nicolaslei@163.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "guzzlehttp/guzzle": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "RocPay\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RocPay\\Tests\\": "tests/"
+        }
+    }
+}
