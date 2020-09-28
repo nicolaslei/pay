@@ -4,6 +4,6 @@ declare(strict_types=1);
 
 namespace RocPay\Exception;
 
-class TradeTypeNotExistException extends \Exception
+class TradeTypeNotExistException extends \Exception implements RocPayException
 {
 }

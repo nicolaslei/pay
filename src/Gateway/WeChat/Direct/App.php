@@ -7,10 +7,12 @@ namespace RocPay\Gateway\WeChat\Direct;
 use RocPay\Gateway\WeChat\Client;
 use RocPay\Gateway\WeChat\Config;
 use RocPay\Gateway\WeChat\Traits\SceneInfoTrait;
+use RocPay\ParametersTrait;
 
 class App
 {
     use SceneInfoTrait;
+    use ParametersTrait;
    
     private $timeExpire;
 
@@ -30,7 +32,7 @@ class App
      */
     public function setTimeExpire(\DateTime $timeExpire): void
     {
-
+        $this->setParameter('time_expire', $timeExpire->format("Y-m-d\TH:i:s+P"));
     }
 
     /**

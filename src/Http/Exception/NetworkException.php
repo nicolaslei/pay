@@ -7,5 +7,4 @@ namespace RocPay\Http\Exception;
 use RocPay\Http\Exception;
 
 class NetworkException extends Exception
-{
-}
+{}
