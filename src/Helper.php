@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace RocPay;
 
-class Hellper
+class Helper
 {
     /**
      * Convert a string to camelCase. Strings already in camelCase will not be harmed.

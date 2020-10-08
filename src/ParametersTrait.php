@@ -76,13 +76,7 @@ trait ParametersTrait
                 $this->parameters = $parameters;
             }
 
-            /**
-             * Returns the parameters.
-             *
-             * @param string|null $key The name of the parameter to return or null to get them all
-             *
-             * @return array An array of parameters
-             */
+
             public function all(/*string $key = null*/)
             {
                 $key = \func_num_args() > 0 ? func_get_arg(0) : null;
@@ -98,39 +92,25 @@ trait ParametersTrait
                 return $value;
             }
 
-            /**
-             * Adds parameters.
-             */
+
             public function add(array $parameters = [])
             {
                 $this->parameters = array_replace($this->parameters, $parameters);
             }
 
-            /**
-             * Returns a parameter by name.
-             *
-             * @param mixed $default The default value if the parameter key does not exist
-             *
-             * @return mixed
-             */
+
             public function get(string $key, $default = null)
             {
                 return \array_key_exists($key, $this->parameters) ? $this->parameters[$key] : $default;
             }
 
-            /**
-             * Sets a parameter by name.
-             *
-             * @param mixed $value The value
-             */
+
             public function set(string $key, $value)
             {
                 $this->parameters[$key] = $value;
             }
 
-            /**
-             * Removes a parameter.
-             */
+
             public function remove(string $key)
             {
                 unset($this->parameters[$key]);
@@ -139,7 +119,7 @@ trait ParametersTrait
 
         if ($parameters) {
             foreach ($parameters as $key => $value) {
-                $method = 'set' . ucfirst(Hellper::camelCase($key));
+                $method = 'set' . ucfirst(Helper::camelCase($key));
                 if (method_exists($this, $method)) {
                     $this->$method($value);
                 }
@@ -148,15 +128,7 @@ trait ParametersTrait
         return $this;
     }
 
-    /**
-     * Validate the request.
-     *
-     * This method is called internally by gateways to avoid wasting time with an API call
-     * when the request is clearly invalid.
-     *
-     * @param string ... a variable length list of required parameters
-     * @throws InvalidRequestException
-     */
+
     public function validate(...$args)
     {
         foreach ($args as $key) {

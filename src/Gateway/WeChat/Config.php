@@ -16,8 +16,61 @@ class Config
      */
     private $mchId;
 
+    /**
+     * @var string
+     */
+    private $notifyUrl;
+
     public function __construct()
     {
         
+    }
+
+    /**
+     * @param string $appId
+     */
+    public function setAppId(string $appId): void
+    {
+        $this->appId = $appId;
+    }
+
+    /**
+     * @param string $mchId
+     */
+    public function setMchId(string $mchId): void
+    {
+        $this->mchId = $mchId;
+    }
+
+    /**
+     * @param string $notifyUrl
+     */
+    public function setNotifyUrl(string $notifyUrl): void
+    {
+        $this->notifyUrl = $notifyUrl;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAppId(): string
+    {
+        return $this->appId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMchId(): string
+    {
+        return $this->mchId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNotifyUrl()
+    {
+        return $this->notifyUrl;
     }
 }
