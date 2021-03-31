@@ -6,7 +6,7 @@ namespace RocPay\Gateway\WeChat;
 
 use RocPay\Gateway\WeChat\ValueObject\Detail\H5Info;
 
-class Detail
+class Detail implements ValueObjectInterface
 {
     private $payerClientIp;
 
@@ -23,9 +23,8 @@ class Detail
     {
     }
 
-    public function toJson()
+    public function toJson(): string
     {
-
     }
 
     /**

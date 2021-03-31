@@ -21,7 +21,7 @@ class Config
      */
     private $notifyUrl;
 
-    public function __construct()
+    public function __construct(array $config)
     {
         
     }
@@ -69,7 +69,7 @@ class Config
     /**
      * @return string
      */
-    public function getNotifyUrl()
+    public function getNotifyUrl(): string
     {
         return $this->notifyUrl;
     }

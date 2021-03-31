@@ -27,10 +27,10 @@ class Helper
     /**
      * Convert strings with underscores to be all lowercase before camelCase is preformed.
      *
-     * @param  string $str The input string
+     * @param string $str The input string
      * @return string The output string
      */
-    protected static function convertToLowercase($str)
+    protected static function convertToLowercase(string $str): string
     {
         $explodedStr = explode('_', $str);
         $lowercasedStr = [];
